@@ -1,49 +1,11 @@
 import React, { useState } from "react";
 import { Forma, Label, Input , BTN} from './Form.styled';
-// import { useDispatch } from "react-redux";
-// import { nanoid } from "nanoid";
-// import { addContact } from "redux/contactSlice";
 import { useCreateContactsMutation } from "redux/phoneBooksApi";
-// import { useCreateContactsMutation, useGetContactsQuery } from "redux/phoneBooksApi";
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 
 
 export function Form() {
     const [create] = useCreateContactsMutation();
-    // const { data: contactsList = [] } = useGetContactsQuery();
-    // const [name, setName] = useState('');
-    // const [phone, setPhone] = useState('');
-
-    // const handleInputChange = (evt) => {
-    //     const { name, value } = evt.currentTarget;
-    //     if (name === 'name') setName(value);
-    //     if (name === 'phone') setPhone(value);
-    // }
-
-    // const handleSubmit = (evt) => {
-    //     evt.preventDefault();
-
-    //     const normalizeFilter = name.toLowerCase();
-    //     const verification = contactsList.every(contact => contact.name.toLowerCase() !== normalizeFilter);
-
-    //     verification ? addContact() : copyContact(name);
-
-    //     setName('');
-    //     setPhone('');
-
-    // }
-
-    // const addContact = async () => {
-    //     await create({ name, phone });
-    // }
-
-    // const copyContact = name => {
-    //     Notify.warning(`${name} is already in contacts`)
-    // }
-
-
-    
-    // const dispatch = useDispatch();
 
     const [state, setState] = useState({
         name: '',
@@ -60,12 +22,6 @@ export function Form() {
 
     function handleSubmit(evt) {
         evt.preventDefault();
-
-        // const contact = {
-        //     id: nanoid(),
-        //     ...state
-        // };
-        // dispatch(addContact(contact));
         createNewContacts();
 
         res();

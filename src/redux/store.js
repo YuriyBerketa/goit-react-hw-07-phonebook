@@ -1,47 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
-// import { persistStore, persistReducer} from 'redux-persist';
-// import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
-// import storage from 'redux-persist/lib/storage';
-// import { contactSlice } from './contactSlice';
-// import { contactReduser } from "./contactSlice";
-// import { filterReduser } from "./filterSlice";
-import { phoneBooksApi } from "./phoneBooksApi";
-// import persistReducer from "redux-persist/es/persistReducer";
+import { configureStore } from '@reduxjs/toolkit';
+import { phoneBooksApi } from './phoneBooksApi';
 import { reducer } from './reduser';
-
-
-
-// const persistConfig = {
-//   key: 'contacts',
-//   storage,
-// };
-
-
-// const persistedReducer = persistReducer(
-//   persistConfig,
-//   contactReduser,
- 
-// );
-
-
 
 export const store = configureStore({
   reducer,
-  // {
-    // contacts: persistedReducer,
-// contacts: contactReduser,
-    // filter: filterReduser,
-     middleware: (defaultMiddleware) =>
-  defaultMiddleware().concat(phoneBooksApi.middleware),
-  // },
-
-  // middleware: getDefaultMiddleware => getDefaultMiddleware({
-  //   serializableCheck: {
-  //     ignoreActions: [
-  //       FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER,
-  //     ],
-  //   },
-  // }),
+  middleware: defaultMiddleware =>
+    defaultMiddleware().concat(phoneBooksApi.middleware),
 });
-
-// export let persistor = persistStore(store);
