@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Forma, Label, Input , BTN} from './Form.styled';
-import { useDispatch } from "react-redux";
-import { nanoid } from "nanoid";
-import { addContact } from "redux/contactSlice";
+// import { useDispatch } from "react-redux";
+// import { nanoid } from "nanoid";
+// import { addContact } from "redux/contactSlice";
 import { useCreateContactsMutation } from "redux/phoneBooksApi";
 // import { useCreateContactsMutation, useGetContactsQuery } from "redux/phoneBooksApi";
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -43,7 +43,7 @@ export function Form() {
 
 
     
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const [state, setState] = useState({
         name: '',
