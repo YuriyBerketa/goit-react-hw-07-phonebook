@@ -30,7 +30,7 @@ export const store = configureStore({
   // {
     // contacts: persistedReducer,
 // contacts: contactReduser,
-//     filter: filterReduser,
+    // filter: filterReduser,
      middleware: (defaultMiddleware) =>
   defaultMiddleware().concat(phoneBooksApi.middleware),
   // },
